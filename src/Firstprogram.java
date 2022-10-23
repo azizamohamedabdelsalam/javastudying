@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -106,7 +107,9 @@ public class Firstprogram {
 
         System.out.println(resultx);
 */
+
         /*Hashmap*/
+        /*
         Map<String, Product> productsByName = new HashMap<>();
         Product eBike = new Product("E-Bike", "A bike with a battery");
         Product roadBike = new Product("Road bike", "A bike for competition");
@@ -132,11 +135,11 @@ public class Firstprogram {
         //assertEquals("A bike with a battery",nextPurchase3.getDescription());
         productsByName.forEach((key,product) -> {
             System.out.println("Key: " + key + " Product:" + product.getDescription());
-        });
+        });*/
         /*------------------------------------*/
         /* Immutable class---------------------*/
         // Getting immutable class only with required parameters
-        ImmutableClass immutableClass = new ImmutableClass.ImmutableClassBuilder(1, "Pankaj").build();
+       /* ImmutableClass immutableClass = new ImmutableClass.ImmutableClassBuilder(1, "Pankaj").build();
 
         HashMap<String,String> hm = new HashMap<String, String>();
         hm.put("Name", "Pankaj");
@@ -151,10 +154,21 @@ public class Firstprogram {
         //lets modify the Object passed as argument or get from the Object
         hm1.put("test", "test");
         hm.put("test", "test");
-
+        hm1.size();
         //check that immutable class properties are not changed
-        System.out.println(immutableClass1.getProperties());
+        System.out.println(immutableClass1.getProperties());*/
         /*-----------------------------------*/
+       /* Stream<Integer> s = Stream.of(5, 10, 20, 50);
+        Integer i = s.reduce(0,(integer1, integer2)-> integer2 - integer1);
+        System.out.println(i);
+        */
+
+        int a =10;
+        int b=5;
+        int c = (a<b)? a : b;
+        System.out.println(c);
+        System.out.println(a);
+
 
     }
 }
