@@ -1,6 +1,7 @@
 package hashmap;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Product {
     private String name;
@@ -45,6 +46,28 @@ public class Product {
     public Product addTagsOfOtherProduct(Product product) {
         this.tags.addAll(product.getTags());
         return this;
+    }
+//Note that hashCode() and equals() need to be overridden only for classes that we want to use
+// as map keys,not for classes that are only used as values in a map.
+
+    // HashMap stores elements in so-called buckets and the number of buckets is called capacity.
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Product product = (Product) o;
+        return Objects.equals(name, product.name) &&
+                Objects.equals(description, product.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, description);
     }
 }
 
